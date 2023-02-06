@@ -2,8 +2,8 @@
 
 ##   Zphisher 	: 	Automated Phishing Tool
 ##   Author 	: 	Saqib Khan 
-##   Version 	: 	2.3.5
-##   Github 	: 	https://github.com/htr-tech/zphisher
+##   Version 	: 	3.0 
+##   Github 	: 	https://github.com/MRKHANKALI/kphisher.git
 
 
 ##                   GNU GENERAL PUBLIC LICENSE
@@ -150,7 +150,7 @@ reset_color() {
 
 ## Kill already running process
 kill_pid() {
-	check_PID="php ngrok cloudflared loclx"
+	check_PID="php ngrok cloudflared"
 	for process in ${check_PID}; do
 		if [[ $(pidof ${process}) ]]; then # Check for Process
 			killall ${process} > /dev/null 2>&1 # Kill the Process
@@ -200,17 +200,17 @@ check_status() {
 ## Banner
 banner() {
 	cat <<- EOF
-		${ORANGE}
-		${ORANGE} ______      _     _     _               
-		${ORANGE}|___  /     | |   (_)   | |              
-		${ORANGE}   / / _ __ | |__  _ ___| |__   ___ _ __ 
-		${ORANGE}  / / | '_ \| '_ \| / __| '_ \ / _ \ '__|
-		${ORANGE} / /__| |_) | | | | \__ \ | | |  __/ |   
-		${ORANGE}/_____| .__/|_| |_|_|___/_| |_|\___|_|   
-		${ORANGE}      | |                                
-		${ORANGE}      |_|                ${RED}Version : ${__version__}
+		${GREEN}
+		${GREEN} ______      _     _     _               
+		${GREEN}|___  /     | |   (_)   | |              
+		${GREEN}   / / _ __ | |__  _ ___| |__   ___ _ __ 
+		${GREEN}  / / | '_ \| '_ \| / __| '_ \ / _ \ '__|
+		${GREEN} / /__| |_) | | | | \__ \ | | |  __/ |   
+		${GREEN}/_____| .__/|_| |_|_|___/_| |_|\___|_|   
+		${GREEN}      | |                                
+		${GREEN}      |_|                ${RED}Version : ${__version__}
 
-		${GREEN}[${WHITE}-${GREEN}]${CYAN} Tool Created by htr-tech (tahmid.rayat)${WHITE}
+		${GREEN}[${WHITE}-${GREEN}]${CYAN} Tool Created by htr-tech (MRKHANKALI)${WHITE}
 	EOF
 }
 
